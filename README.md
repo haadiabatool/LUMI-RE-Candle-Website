@@ -33,11 +33,11 @@ LUMIÈRE brings together elegant candle shopping and practical e-commerce functi
 
 ## Project Screenshots
 
-![Candle-Website](candle-website-image-1)
-![Candle-Website](candle-website-image-2)
-![Candle-Website](candle-website-image-3)
-![Candle-Website](candle-website-image-4)
-![Candle-Website](candle-website-image-1)
-![Candle-Website](candle-website-image-1)
-![Candle-Website](candle-website-image-1)
+![Candle-Website](candle-website-image-1.jpeg)
+![Candle-Website](candle-website-image-2.jpeg)
+![Candle-Website](candle-website-image-3.jpeg)
+![Candle-Website](candle-website-image-4.jpeg)
+![Candle-Website](candle-website-image-5.jpeg)
+![Candle-Website](candle-website-image-6.jpeg)
+![Candle-Website](candle-website-image-7.jpeg)
 
