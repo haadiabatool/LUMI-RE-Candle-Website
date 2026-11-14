@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUMIÈRE Candles - Collection Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Shop Page Wrapper -->
+    <main class="category-explore-page" id="shopPage">
+
+        <!-- Top Navigation / Back Button -->
+        <div class="category-hero-banner">
+            <a href="index.html" class="btn-back-to-collections" id="btnBackToCollections">
+                ← Back to Home
+            </a>
+            <div class="banner-content">
+                <img id="categoryHeroImg" src="assets/candle-6.jpeg" alt="Category Banner">
+                <div class="banner-text">
+                    <h2 id="categoryTitle">Loading Collection...</h2>
+                    <p id="categoryDesc">Please wait while we fetch your requested candles.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="explore-layout-container">
+
+            <!-- Left Column: Filter Checkboxes -->
+            <aside class="explore-filters-sidebar">
+                <h3 class="filter-title">Filter Products</h3>
+
+                <!-- Filter Group 2: Price Range -->
+                <div class="filter-group">
+                    <h4>Price Range</h4>
+                    <label class="checkbox-label">
+                        <input type="checkbox" class="filter-price" value="under-1800"> Under Rs. 1,800
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" class="filter-price" value="1800-2200"> Rs. 1,800 - Rs. 2,200
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" class="filter-price" value="above-2200"> Above Rs. 2,200
+                    </label>
+                </div>
+
+                <button type="button" class="btn-reset-filters" id="btnResetFilters">Reset Filters</button>
+            </aside>
+
+            <!-- Right Column: 10 Dynamic Product Cards Grid -->
+            <section class="explore-products-grid" id="exploreProductsGrid">
+                <!-- Cards injected via JavaScript -->
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Search Modal Overlay -->
+    <div class="search-modal-overlay" id="searchModal">
+        <div class="search-modal-content">
+            <div class="search-header-bar">
+                <h3>Search LUMIÈRE Candles</h3>
+                <button class="search-close-btn" id="searchCloseBtn">&times;</button>
+            </div>
+            <div class="search-input-wrapper">
+                <input type="text" id="searchInputField"
+                    placeholder="Type candle name or scent (e.g., Vanilla, Rose)..." autofocus>
+            </div>
+            <div class="search-results-grid" id="searchResultsGrid">
+                <p class="search-placeholder-text">Start typing to explore our handcrafted candles...</p>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="explore-collection.js"></script>
+    <script type="module" src="search-icon.js"></script>
+
+</body>
+
+</html>

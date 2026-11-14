@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMIÈRE Candles - Product Detail</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Minimalist Navbar */
+    .product-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 4rem;
+      border-bottom: 1px solid rgba(216, 167, 167, 0.2);
+      background-color: var(--soft-cream);
+    }
+    .product-nav .logo {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--deep-plum);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+    }
+    .btn-back {
+      font-family: var(--font-body);
+      color: var(--rosewood);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+    .btn-back:hover {
+      color: var(--deep-plum);
+    }
+
+    /* Product Detail Section */
+    .product-detail-container {
+      max-width: 1100px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    /* Gallery Section */
+    .product-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .main-img-box {
+      width: 100%;
+      height: 350px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(216, 167, 167, 0.3);
+      background: #fff;
+    }
+    .main-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .thumb-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .thumb-box {
+      height: 100px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(216, 167, 167, 0.3);
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity 0.2s, border-color 0.2s;
+    }
+    .thumb-box:hover, .thumb-box.active {
+      opacity: 1;
+      border-color: var(--rosewood);
+    }
+    .thumb-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Product Info Section */
+    .product-details-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .p-title {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      color: var(--deep-plum);
+      line-height: 1.2;
+    }
+    .p-rating {
+      color: #e59866;
+      font-size: 1rem;
+      letter-spacing: 2px;
+    }
+    .p-price {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      color: var(--rosewood);
+      font-weight: 600;
+    }
+    .p-desc {
+      font-size: 1rem;
+      color: var(--deep-plum);
+      line-height: 1.6;
+      opacity: 0.85;
+      border-top: 1px solid rgba(152, 107, 112, 0.15);
+      border-bottom: 1px solid rgba(152, 107, 112, 0.15);
+      padding: 1rem 0;
+    }
+
+    /* Quantity Selector */
+    .quantity-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+    .quantity-wrapper label {
+      font-weight: 600;
+      color: var(--deep-plum);
+      font-size: 0.95rem;
+    }
+    .qty-controls {
+      display: flex;
+      align-items: center;
+      border: 1px solid var(--dusty-rose);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .qty-btn {
+      background: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-weight: bold;
+      color: var(--deep-plum);
+    }
+    .qty-input {
+      width: 45px;
+      text-align: center;
+      border: none;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--deep-plum);
+      outline: none;
+    }
+
+    
+    .btn-cart-action {
+      padding: 1rem 12rem;
+      margin-top:2rem;
+      background-color: transparent;
+      border: 2px solid var(--rosewood);
+      color: var(--rosewood);
+      border-radius: 6px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+    .btn-cart-action:hover {
+      background-color: var(--rosewood);
+      color: var(--soft-cream);
+    }
+    
+
+    @media (max-width: 768px) {
+      .product-detail-container { grid-template-columns: 1fr; gap: 2rem; }
+      .product-nav { padding: 1rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Minimalist Navbar -->
+  <nav class="product-nav">
+    <a href="index.html" class="logo">LUMIÈRE</a>
+    <a href="javascript:history.back()" class="btn-back">← Back</a>
+  </nav>
+
+  <!-- Product Detail Section -->
+  <div class="product-detail-container" id="productDetailContainer">
+    <!-- Injected dynamically via JS -->
+  </div>
+
+  <script type="module">
+    import { allMasterProducts } from './product-data.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = urlParams.get('id');
+      const container = document.getElementById('productDetailContainer');
+
+      // Find product from master array
+      const product = allMasterProducts.find(p => p.id === productId) || allMasterProducts[0];
+
+      // Setup 3 thumbnail images (using current image and others as fallback thumbnails)
+      const thumb1 = product.img;
+      const thumb2 = allMasterProducts[(allMasterProducts.indexOf(product) + 1) % allMasterProducts.length].img;
+      const thumb3 = allMasterProducts[(allMasterProducts.indexOf(product) + 2) % allMasterProducts.length].img;
+
+      container.innerHTML = `
+        <!-- Left: Image Gallery -->
+        <div class="product-gallery">
+          <div class="main-img-box">
+            <img src="${product.img}" alt="${product.name}" id="mainProductImg">
+          </div>
+          <div class="thumb-row">
+            <div class="thumb-box active" onclick="changeImage('${thumb1}', this)"><img src="${thumb1}" alt="Thumb 1"></div>
+            <div class="thumb-box" onclick="changeImage('${thumb2}', this)"><img src="${thumb2}" alt="Thumb 2"></div>
+            <div class="thumb-box" onclick="changeImage('${thumb3}', this)"><img src="${thumb3}" alt="Thumb 3"></div>
+          </div>
+        </div>
+
+        <!-- Right: Info & Actions -->
+        <div class="product-details-info">
+          <h1 class="p-title">${product.name}</h1>
+          <div class="p-rating">★★★★★ <span style="font-size: 0.85rem; color: var(--rosewood); margin-left: 5px;">(48 Reviews)</span></div>
+          <div class="p-price">Rs. ${product.price}</div>
+          <p class="p-desc">${product.desc}</p>
+
+          <div class="quantity-wrapper">
+            <label>Quantity:</label>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="adjustQty(-1)">-</button>
+              <input type="text" id="qtyInput" class="qty-input" value="1" readonly>
+              <button class="qty-btn" onclick="adjustQty(1)">+</button>
+            </div>
+          </div>
+
+          <div class="action-buttons-row">
+            <button class="btn-cart-action" id="addToCartBtn">Add to Bag</button>
+          </div>
+        </div>
+      `;
+
+      // Global functions for gallery & quantity
+      window.changeImage = function(src, element) {
+        document.getElementById('mainProductImg').src = src;
+        document.querySelectorAll('.thumb-box').forEach(b => b.classList.remove('active'));
+        element.classList.add('active');
+      }
+
+      window.adjustQty = function(change) {
+        const input = document.getElementById('qtyInput');
+        let val = parseInt(input.value) + change;
+        if (val < 1) val = 1;
+        input.value = val;
+      }
+
+      // Add to Cart Logic
+      document.getElementById('addToCartBtn').addEventListener('click', () => {
+        const qty = parseInt(document.getElementById('qtyInput').value);
+        let cart = JSON.parse(localStorage.getItem('lumiere_cart')) || [];
+        
+        for (let i = 0; i < qty; i++) {
+          cart.push({
+            id: product.id,
+            name: product.name,
+            price: product.numericPrice,
+            img: product.img
+          });
+        }
+        localStorage.setItem('lumiere_cart', JSON.stringify(cart));
+        alert(`${qty} x ${product.name} added to your shopping bag!`);
+      });
+
+      // Order Now Logic (adds to cart and goes straight to cart.html)
+      document.getElementById('orderNowBtn').addEventListener('click', (e) => {
+        const qty = parseInt(document.getElementById('qtyInput').value);
+        let cart = JSON.parse(localStorage.getItem('lumiere_cart')) || [];
+        
+        for (let i = 0; i < qty; i++) {
+          cart.push({
+            id: product.id,
+            name: product.name,
+            price: product.numericPrice,
+            img: product.img
+          });
+        }
+        localStorage.setItem('lumiere_cart', JSON.stringify(cart));
+      });
+    });
+  </script>
+</body>
+</html>

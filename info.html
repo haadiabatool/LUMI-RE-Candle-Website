@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUMIÈRE— Information & Policies</title>
+    <style>
+        :root {
+            --dusty-rose: #D8A7A7;
+            --blush-pink: #F3D9D5;
+            --rosewood: #986B70;
+            --soft-cream: #FFF7EF;
+            --deep-plum: #49313F;
+            --champagne: #D9BD91;
+
+            /* Web-safe / Native System Typography Stack */
+            --font-heading: Georgia, 'Times New Roman', serif;
+            --font-body: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --font-decorative: Georgia, 'Times New Roman', serif;
+
+            --transition-smooth: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--blush-pink);
+            color: var(--deep-plum);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+        }
+
+        /* Minimalist Header */
+        .info-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 4rem;
+            border-bottom: 1px solid rgba(167, 125, 88, 0.25);
+            background-color: var(--rosewood);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .brand-logo {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--soft-cream);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+        }
+
+        .btn-back {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--soft-cream);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .btn-back:hover {
+            color: var(--champagne);
+        }
+
+        /* Main Layout */
+        .info-wrapper {
+            max-width: 1150px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        /* Sidebar Quick Switcher */
+        .info-sidebar {
+            background-color: #FFFFFF;
+            border: 1px solid var(--dusty-rose);
+            border-radius: 10px;
+            padding: 1.5rem;
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-group-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--deep-plum);
+            margin-bottom: 0.75rem;
+            margin-top: 1.25rem;
+        }
+
+        .sidebar-group-title:first-child {
+            margin-top: 0;
+        }
+
+        .sidebar-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .sidebar-list a {
+            display: block;
+            padding: 0.55rem 0.85rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            color: var(--font-heading);
+            transition: all 0.2s ease;
+        }
+
+        .sidebar-list a:hover {
+            background-color: var(--blush-pink);
+            color: var(--deep-plum);
+        }
+
+        .sidebar-list a.active {
+            background-color: var(--blush-pink);
+            color: var(--deep-plum);
+            font-weight: 500;
+        }
+
+        /* Dynamic Content Area */
+        .info-content-box {
+            background-color: #FFFFFF;
+            border: 1px solid var(--dusty-rose);
+            border-radius: 12px;
+            padding: 3rem 3.5rem;
+            box-shadow: 0 10px 30px rgba(27, 58, 47, 0.04);
+        }
+
+        .eyebrow {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            color: var(--deep-plum);
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+
+        .info-main-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.5rem;
+            color: var(--deep-plum);
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-updated {
+            font-size: 0.85rem;
+            color: var(--deep-plum);
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--rosewood);
+        }
+
+        .info-body h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.35rem;
+            color: var(--deep-plum);
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .info-body h3:first-child {
+            margin-top: 0;
+        }
+
+        .info-body p {
+            font-size: 1rem;
+            color: var(--font-body);
+            opacity: 0.9;
+            margin-bottom: 1.1rem;
+        }
+
+        .info-body ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .info-body li {
+            margin-bottom: 0.5rem;
+            color: var(--font-heading);
+        }
+
+        /* Interactive Order Tracker Box (for Track Your Order page) */
+        .tracker-box {
+            background-color: var(--blush-pink);
+            padding: 1.75rem;
+            border-radius: 8px;
+            border: 1px solid var(--dusty-rose);
+            margin-top: 1.5rem;
+        }
+
+        .tracker-form {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .tracker-input {
+            flex: 1;
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--rosewood);
+            border-radius: 6px;
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        .tracker-btn {
+            background-color: var(--deep-plum);
+            color: var(--soft-cream);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .tracker-btn:hover {
+            background-color: var(--accent-brown);
+            color: var(--deep-plum)
+        }
+
+        @media (max-width: 900px) {
+            .info-wrapper {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .info-sidebar {
+                position: static;
+            }
+
+            .info-content-box {
+                padding: 2rem 1.5rem;
+            }
+
+            .info-nav {
+                padding: 1.25rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top Navbar -->
+    <nav class="info-nav">
+        <a href="index.html" class="brand-logo">LUMIÈRE</a>
+        <a href="index.html" class="btn-back">← Back to Home</a>
+    </nav>
+
+    <!-- Main Content Layout -->
+    <div class="info-wrapper">
+
+        <!-- Left Sidebar for Instant Switching -->
+        <aside class="info-sidebar">
+            <div class="sidebar-group-title">Customer Support</div>
+            <ul class="sidebar-list">
+                <li><a href="info.html?page=faq" data-page="faq">Help & FAQs</a></li>
+                <li><a href="info.html?page=track" data-page="track">Track Your Order</a></li>
+                <li><a href="info.html?page=shipping" data-page="shipping">Shipping Information</a></li>
+                <li><a href="info.html?page=custom" data-page="custom">Custom Orders</a></li>
+            </ul>
+
+            <div class="sidebar-group-title">Policies & Legal</div>
+            <ul class="sidebar-list">
+                <li><a href="info.html?page=returns" data-page="returns">Shipping & Return Policy</a></li>
+                <li><a href="info.html?page=privacy" data-page="privacy">Privacy Policy</a></li>
+                <li><a href="info.html?page=terms" data-page="terms">Terms and Conditions</a></li>
+            </ul>
+        </aside>
+
+        <!-- Right Dynamic Reader Box -->
+        <main class="info-content-box" id="infoContentBox">
+            <!-- Content injected via JS -->
+        </main>
+
+    </div>
+
+    <script>
+        // Centralized Dynamic Data for all 7 Footer Links
+        const pagesData = {
+            faq: {
+                eyebrow: "CUSTOMER SUPPORT",
+                title: "Help & Frequently Asked Questions",
+                updated: "Updated for 2026 Editions",
+                content: `
+          <h3>1. What formats are Evelyn Hart's books available in?</h3>
+          <p>All ten titles in the Evelyn Hart collection are available in premium matte-finish Paperback editions as well as instant-download Digital E-book formats compatible with Kindle, Apple Books, and PDF readers.</p>
+
+          <h3>2. Do you offer signed copies?</h3>
+          <p>Yes! Signed collector editions are available for select titles including <em>The Quiet Mind</em> and <em>Beyond Limits</em>. You can request a personalized inscription during checkout or via our Custom Orders section.</p>
+
+          <h3>3. How long does order processing take?</h3>
+          <p>Standard orders are carefully packaged and dispatched within 1 to 2 business days. Personalized or bulk gift orders may take up to 3 business days.</p>
+
+          <h3>4. Can I order books for a book club or corporate event?</h3>
+          <p>Absolutely. We offer special bundled pricing for orders of 10 or more copies. Please visit the Custom Orders tab for bulk inquiry details.</p>
+        `
+            },
+            track: {
+                eyebrow: "ORDER STATUS",
+                title: "Track Your Order",
+                updated: "Real-Time Dispatch Updates",
+                content: `
+        <p>Enter your Tracking ID below (generated at checkout, e.g., <strong>LUM-482910</strong>) to check the current shipping and delivery status of your order.</p>
+        
+        <div class="tracker-box">
+            <label for="orderIdInput" style="font-weight: 600; color: var(--deep-plum); font-size: 0.95rem;">Order Tracking ID</label>
+            <div class="tracker-form">
+                <input type="text" id="orderIdInput" class="tracker-input" placeholder="e.g., LUM-482910">
+                <button class="tracker-btn" onclick="checkOrderStatus()">Track Package</button>
+            </div>
+            <div id="trackerResult" style="margin-top: 1.25rem; display: none;"></div>
+        </div>
+
+        <h3>Need further assistance?</h3>
+        <p>If your tracking number hasn't updated within 48 hours of dispatch, please reach out to our support team with your tracking ID.</p>
+    `
+            },
+            shipping: {
+                eyebrow: "DELIVERY DETAILS",
+                title: "Shipping Information",
+                updated: "Domestic & International Rates",
+                content: `
+          <h3>Domestic Delivery</h3>
+          <p>We offer complimentary standard shipping on all orders over $35. For orders under $35, a flat shipping fee of $4.99 applies. Standard delivery typically arrives within 3–5 business days.</p>
+
+          <h3>Express Shipping</h3>
+          <p>Need your books sooner? Express courier delivery (1–2 business days) is available at checkout for $9.99.</p>
+
+          <h3>International Shipping</h3>
+          <p>Evelyn Hart's stories travel worldwide. International shipping takes approximately 7–14 business days depending on local customs processing. Calculated rates are displayed at checkout.</p>
+        `
+            },
+            custom: {
+                eyebrow: "BESPOKE & BULK",
+                title: "Custom Orders & Signed Editions",
+                updated: "Personalized Gifts & Book Clubs",
+                content: `
+          <h3>Personalized Author Inscriptions</h3>
+          <p>Make your gift unforgettable. Whether celebrating a graduation, birthday, or personal milestone, Evelyn Hart can include a handwritten dedication on the title page.</p>
+
+          <h3>Book Club & Event Bundles</h3>
+          <ul>
+            <li><strong>Small Gatherings (5–15 copies):</strong> 15% discount + complimentary discussion guide cards.</li>
+            <li><strong>Corporate & Retreat Orders (16+ copies):</strong> 25% discount + custom ribbon gift wrapping.</li>
+          </ul>
+
+          <h3>How to Request</h3>
+          <p>Simply add a note in the "Order Instructions" box at checkout, or email your requirements directly to <strong>concierge@evelynhartbooks.com</strong>.</p>
+        `
+            },
+            returns: {
+                eyebrow: "POLICIES",
+                title: "Shipping & Return Policy",
+                updated: "Last Updated: November 2026",
+                content: `
+          <h3>30-Day Reader Satisfaction Guarantee</h3>
+          <p>We take immense pride in the print quality of every book. If you are not completely satisfied with your physical purchase, you may return unread books in their original condition within 30 days of delivery for a full refund or exchange.</p>
+
+          <h3>Damaged or Defective Copies</h3>
+          <p>If your package arrives damaged in transit, please send a photo of the book within 7 days of receipt, and we will immediately dispatch a free replacement copy at no cost to you.</p>
+
+          <h3>Non-Returnable Items</h3>
+          <p>Digital E-books (once downloaded) and personalized/signed copies with custom names are non-refundable unless damaged upon arrival.</p>
+        `
+            },
+            privacy: {
+                eyebrow: "LEGAL",
+                title: "Privacy Policy",
+                updated: "Effective Date: January 2026",
+                content: `
+          <h3>Information We Collect</h3>
+          <p>When you browse our store, place an order, or subscribe to Evelyn Hart's reader letters, we collect only essential information such as your name, shipping address, email address, and order history.</p>
+
+          <h3>How We Use Your Information</h3>
+          <ul>
+            <li>To process, pack, and deliver your book orders accurately.</li>
+            <li>To send order confirmations and shipping tracking updates.</li>
+            <li>To share occasional reflections and new book releases (only if you opt in).</li>
+          </ul>
+
+          <h3>Data Security</h3>
+          <p>We never sell, rent, or trade your personal details to third parties. All payment transactions are encrypted using industry-standard SSL security.</p>
+        `
+            },
+            terms: {
+                eyebrow: "LEGAL",
+                title: "Terms and Conditions",
+                updated: "Effective Date: January 2026",
+                content: `
+          <h3>1. Intellectual Property & Copyright</h3>
+          <p>All written content, book excerpts, cover designs, photography, and branding on this website are the exclusive intellectual property of Evelyn Hart. Unauthorized reproduction or distribution is strictly prohibited.</p>
+
+          <h3>2. Pricing & Availability</h3>
+          <p>All prices are listed in USD unless stated otherwise. We reserve the right to update pricing or limit quantities on special collector editions without prior notice.</p>
+
+          <h3>3. Digital Downloads</h3>
+          <p>E-book purchases grant a single-user personal license. Sharing, reselling, or uploading digital files to public platforms is prohibited under copyright law.</p>
+        `
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const pageKey = urlParams.get('page') || 'faq'; // Default to FAQ if no param
+            const contentBox = document.getElementById('infoContentBox');
+
+            // Load requested page or fallback to FAQ
+            const currentData = pagesData[pageKey] || pagesData.faq;
+
+            // Render Content
+            contentBox.innerHTML = `
+        <span class="eyebrow">${currentData.eyebrow}</span>
+        <h1 class="info-main-title">${currentData.title}</h1>
+        <div class="info-updated">${currentData.updated}</div>
+        <div class="info-body">${currentData.content}</div>
+      `;
+
+            // Highlight Active Link in Sidebar
+            document.querySelectorAll('.sidebar-list a').forEach(link => {
+                if (link.getAttribute('data-page') === pageKey) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Interactive Order Tracker Demo Function
+        // Real Order Tracker Function linked with cart.html (localStorage)
+function checkOrderStatus() {
+    const input = document.getElementById('orderIdInput').value.trim().toUpperCase();
+    const result = document.getElementById('trackerResult');
+    result.style.display = 'block';
+
+    if (!input) {
+        result.innerHTML = `<p style="color: #b03a2e; font-weight: 600; margin: 0;">Please enter a valid Tracking ID.</p>`;
+        return;
+    }
+
+    // cart.html ke saved orders localStorage se fetch karein
+    const savedOrders = JSON.parse(localStorage.getItem('lumiere_orders')) || [];
+    const matchedOrder = savedOrders.find(order => order.trackingId.toUpperCase() === input);
+
+    if (matchedOrder) {
+        // Agar Tracking ID match ho jaye
+        result.innerHTML = `
+            <div style="background: #FFFFFF; border: 1px solid var(--rosewood); border-radius: 8px; padding: 1.25rem; color: var(--deep-plum);">
+                <p style="color: #1e7e34; font-weight: 700; margin-bottom: 0.4rem;">
+                    ✓ Order Found (${matchedOrder.trackingId})
+                </p>
+                <p style="margin-bottom: 0.35rem; font-size: 0.95rem;">
+                    Your order is confirmed delivered in <strong>3 to 5 days</strong> .
+                </p>
+                <p style="margin: 0; font-size: 0.85rem; color: var(--rosewood);">
+                    <strong>Customer:</strong> ${matchedOrder.customerName} | <strong>Address:</strong> ${matchedOrder.address} | <strong>Total:</strong> Rs. ${matchedOrder.total.toLocaleString()}
+                </p>
+            </div>
+        `;
+    } else {
+        // Agar Tracking ID exist na kare
+        result.innerHTML = `
+            <div style="background: #fdf2f2; border: 1px solid #e6b0aa; border-radius: 8px; padding: 1rem; color: #b03a2e; font-weight: 600;">
+                ✕ This Tracking id ("${input}")  does not exist. Please check your tracking ID check.
+            </div>
+        `;
+    }
+}
+    </script>
+    <script src="cart.html"></script>
+</body>
+
+</html>

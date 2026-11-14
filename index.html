@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMIÈRE</title>
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+  <!-- A. Announcement Bar -->
+  <div class="announcement-bar">
+    <p>A little warmth for your everyday moments — <span class="accent-text">Enjoy 10% OFF your first order!</span></p>
+  </div>
+
+  <!-- B. Navigation Bar -->
+  <header class="site-header">
+    <div class="navbar-container">
+
+      <!-- Mobile Hamburger Toggle -->
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo">LUMIÈRE</a>
+
+      <!-- Center Navigation Links -->
+      <nav class="nav-links" id="navLinks">
+        <ul>
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#bestsellers">Shop</a></li>
+          <li><a href="#collections">Collections</a></li>
+          <li><a href="#story">About Us</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right Action Icons -->
+      <div class="nav-actions">
+        <!-- Search Icon -->
+        <button class="icon-btn" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <!-- Wishlist Link -->
+        <a href="wishlist.html" class="icon-btn" aria-label="Wishlist">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+            </path>
+          </svg>
+        </a>
+
+        <!-- Shopping Bag Link -->
+        <a href="cart.html" class="icon-btn bag-btn" aria-label="Shopping Bag">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="bag-count">0</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- C. Hero Section -->
+  <section class="hero-section" id="home">
+    <!-- Full Background Image Container -->
+    <div class="hero-bg-overlay"></div>
+
+    <!-- Hero Content Left-Aligned -->
+    <div class="hero-container">
+      <div class="hero-content">
+        <span class="hero-eyebrow">PREMIUM HANDMADE SCENTED CANDLES</span>
+
+        <h1 class="hero-title">Light up your moments.</h1>
+
+        <p class="hero-description">
+          LUMIÈRE creates beautiful, relaxing, and memorable experiences through thoughtfully crafted scented candles,
+          decorative pieces, and personalized gifts.
+        </p>
+
+        <div class="hero-btn-group">
+          <a href="#bestsellers" class="btn btn-primary">Shop Now</a>
+          <a href="#collections" class="btn btn-secondary">Explore more</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- D. Shop by Collection Section (Updated Links) -->
+  <section class="collections-section" id="collections">
+    <div class="collections-container">
+
+      <div class="section-header">
+        <span class="collection-eyebrow">COLLECTION</span>
+        <h2 class="section-title">Discover Your Perfect Candle.</h2>
+        <p class="section-description">
+          Find a candle that matches your mood, your space and your special moments.
+        </p>
+      </div>
+
+      <div class="collections-grid">
+
+        <!-- Card 1: Scented Candles -->
+        <div class="collection-card">
+          <img src="assets/scent-candle-1.jpeg" alt="Scented Candles" class="card-img" loading="lazy">
+          <div class="card-overlay">
+            <h3 class="card-name">Scented Candles</h3>
+            <a href="shop.html?category=scented" class="btn-explore" data-category="scented">Explore</a>
+          </div>
+        </div>
+
+        <!-- Card 2: Decorative Candles -->
+        <div class="collection-card">
+          <img src="assets/flower-candle-1.jpeg" alt="Decorative Candles" class="card-img" loading="lazy">
+          <div class="card-overlay">
+            <h3 class="card-name">Decorative Candles</h3>
+            <a href="shop.html?category=decorative" class="btn-explore" data-category="decorative">Explore</a>
+          </div>
+        </div>
+
+        <!-- Card 3: Luxury Candles -->
+        <div class="collection-card">
+          <img src="assets/candle-1.jpeg" alt="Luxury Candles" class="card-img" loading="lazy">
+          <div class="card-overlay">
+            <h3 class="card-name">Luxury Candles</h3>
+            <a href="shop.html?category=luxury" class="btn-explore" data-category="luxury">Explore</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- E. Bestsellers Carousel Section -->
+  <section class="bestsellers-section" id="bestsellers">
+    <div class="bestsellers-container">
+
+      <div class="section-header center">
+        <span class="bestseller-eyebrow">BESTSELLER</span>
+        <h2 class="section-title">Customer Favorites.</h2>
+        <p class="section-description">Meet the candles our customers love most.</p>
+      </div>
+
+      <div class="carousel-outer-wrapper">
+        <button class="arrow-btn prev-arrow" id="prevBtn" aria-label="Previous Products" disabled>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <div class="carousel-wrapper">
+          <div class="carousel-track" id="carouselTrack">
+
+            <!-- Card 1 -->
+            <div class="product-card" data-id="b1" data-name="Vanilla Bliss Candle" data-price="1750"
+              data-img="assets/candle-2.jpeg">
+              <div class="product-image-box">
+                <button class="wishlist-btn" aria-label="Wishlist">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                    </path>
+                  </svg>
+                </button>
+                <img src="assets/candle-2.jpeg" alt="Vanilla Bliss Candle">
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Vanilla Bliss Candle</h3>
+                <p class="product-desc">A soft vanilla fragrance that creates a warm and comforting atmosphere.</p>
+                <div class="product-price">Rs. 1,750</div>
+                <button class="btn-add-cart">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="product-card" data-id="b2" data-name="Lavender Dream Candle" data-price="1850"
+              data-img="assets/candle-6.jpeg">
+              <div class="product-image-box">
+                <button class="wishlist-btn" aria-label="Wishlist">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                    </path>
+                  </svg>
+                </button>
+                <img src="assets/candle-6.jpeg" alt="Lavender Dream Candle">
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Lavender Dream Candle</h3>
+                <p class="product-desc">A calming lavender scent for peaceful evenings.</p>
+                <div class="product-price">Rs. 1,850</div>
+                <button class="btn-add-cart">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="product-card" data-id="b3" data-name="Rose Petal Candle" data-price="1950"
+              data-img="assets/candle-4.jpeg">
+              <div class="product-image-box">
+                <button class="wishlist-btn" aria-label="Wishlist">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                    </path>
+                  </svg>
+                </button>
+                <img src="assets/candle-4.jpeg" alt="Rose Petal Candle">
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Rose Petal Candle</h3>
+                <p class="product-desc">A romantic floral fragrance inspired by fresh rose petals.</p>
+                <div class="product-price">Rs. 1,950</div>
+                <button class="btn-add-cart">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="product-card" data-id="b4" data-name="Ocean Breeze Candle" data-price="1800"
+              data-img="assets/candle-5.jpeg">
+              <div class="product-image-box">
+                <button class="wishlist-btn" aria-label="Wishlist">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                    </path>
+                  </svg>
+                </button>
+                <img src="assets/candle-5.jpeg" alt="Ocean Breeze Candle">
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Ocean Breeze Candle</h3>
+                <p class="product-desc">A refreshing scent inspired by cool ocean air.</p>
+                <div class="product-price">Rs. 1,800</div>
+                <button class="btn-add-cart">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Hidden Item 5 -->
+            <div class="product-card" data-id="b5" data-name="Amber Glow Candle" data-price="2100"
+              data-img="assets/flower-candle-8.jpeg">
+              <div class="product-image-box">
+                <button class="wishlist-btn" aria-label="Wishlist">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                    </path>
+                  </svg>
+                </button>
+                <img src="assets/flower-candle-8.jpeg" alt="Amber Glow Candle">
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Amber Glow Candle</h3>
+                <p class="product-desc">Rich golden amber notes combined with subtle cedarwood warmth.</p>
+                <div class="product-price">Rs. 2,100</div>
+                <button class="btn-add-cart">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Hidden Item 6 -->
+            <div class="product-card" data-id="b6" data-name="Cinnamon Spice Candle" data-price="1900"
+              data-img="assets/candle-7.jpeg">
+              <div class="product-image-box">
+                <button class="wishlist-btn" aria-label="Wishlist">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                    </path>
+                  </svg>
+                </button>
+                <img src="assets/candle-7.jpeg" alt="Cinnamon Spice Candle">
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Cinnamon Spice Candle</h3>
+                <p class="product-desc">Spiced clove and sweet cinnamon for cozy winter evenings.</p>
+                <div class="product-price">Rs. 1,900</div>
+                <button class="btn-add-cart">Add to Cart</button>
+              </div>
+            </div>
+
+            <!-- Hidden Item 7 -->
+            <div class="product-card" data-id="b7" data-name="Eucalyptus Mint Candle" data-price="1850"
+              data-img="assets/candle-9.jpeg">
+              <div class="product-image-box">
+                <button class="wishlist-btn" aria-label="Wishlist">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                    </path>
+                  </svg>
+                </button>
+                <img src="assets/candle-9.jpeg" alt="Eucalyptus Mint Candle">
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Eucalyptus Mint Candle</h3>
+                <p class="product-desc">Crisp spearmint infused with natural eucalyptus essential oils.</p>
+                <div class="product-price">Rs. 1,850</div>
+                <button class="btn-add-cart">Add to Cart</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <button class="arrow-btn next-arrow" id="nextBtn" aria-label="Next Products">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- F. ABOUT BRAND PREVIEW SECTION -->
+  <section class="about-brand-section" id="story">
+    <div class="about-brand-container">
+
+      <!-- Left Column: Story Content -->
+      <div class="about-brand-content">
+        <span class="brand-eyebrow">ABOUT LUMIÈRE</span>
+        <h2 class="brand-title">A Little Light, A Lot of Love.</h2>
+
+        <p class="brand-description">
+          At LUMIÈRE, we believe that small moments can create beautiful memories. Our journey began with a love for
+          fragrances, creativity, and handmade products. Every candle is thoughtfully designed to bring warmth, comfort,
+          and happiness into your everyday life.
+        </p>
+
+        <!-- Additional Custom Brand Story -->
+        <p class="brand-description-extended">
+          Crafted slowly in small batches, we blend 100% natural eco-soy wax with pure botanical scents. From the gentle
+          flicker of the cotton wick to the lingering luxury of our signature fragrances, every piece tells a story of
+          passion, mindfulness, and timeless elegance.
+        </p>
+
+        <div class="brand-highlights">
+          <div class="brand-flex">
+            <div class="highlight-item">
+              <span class="highlight-icon">✨</span>
+              <div>
+                <h4>Handcrafted in Batches</h4>
+                <p>Poured with patience and perfection</p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-icon">🌿</span>
+              <div>
+                <h4>100% Eco-Soy Wax</h4>
+                <p>Clean, non-toxic, long-lasting burn</p>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="brand-flex">
+            <div class="highlight-item">
+              <span class="highlight-icon">🕯️</span>
+              <div>
+                <h4>Pure Essential Oils</h4>
+                <p>Infused with soothing, therapeutic scents</p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-icon">♻️</span>
+              <div>
+                <h4>Reusable Luxury Jars</h4>
+                <p>Sustainable vessels crafted to keep</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Right Column: Artistic Tilted Multi-Image Composition -->
+      <div class="about-brand-visual">
+        <div class="editorial-gallery-wrapper">
+
+          <!-- Main Large Base Image -->
+          <div class="gallery-card main-card">
+            <img src="assets\flower-candle-3.jpeg" alt="LUMIÈRE Artisan Candle Pouring">
+            <span class="floating-tag main-tag">Artisanal Pouring</span>
+          </div>
+
+          <!-- Top Right Tilted Image Card -->
+          <div class="gallery-card tilt-right">
+            <img src="assets\candle-12.jpeg" alt="Botanical Scents">
+            <span class="image-caption">Pure Essential Oils</span>
+          </div>
+
+          <!-- Bottom Left Tilted Image Card -->
+          <div class="gallery-card tilt-left">
+            <img src="assets\scent-candle-3.jpeg" alt="Warm Cozy Flame">
+            <span class="image-caption">100% Cotton Wick</span>
+          </div>
+
+          <!-- Decorative Aesthetic Badge -->
+          <div class="artisan-badge">
+            <svg class="badge-text-ring" viewBox="0 0 100 100" width="100" height="100">
+              <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" />
+              <text font-size="9.5" fill="#49313F" letter-spacing="1.5">
+                <textPath href="#circlePath">LUMIÈRE • HANDMADE WITH LOVE •</textPath>
+              </text>
+            </svg>
+            <span class="badge-center-icon">🕯️</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- G. CONTACT & STORE INFORMATION SECTION -->
+  <section class="contact-section" id="contact">
+    <div class="contact-container">
+
+      <!-- Section Header (Centered) -->
+      <div class="contact-header">
+        <span class="contact-eyebrow">GET IN TOUCH</span>
+        <h2 class="contact-title">We’re Here for You.</h2>
+        <p class="contact-description">
+          Whether you have a question about our scented candles, need help choosing a personalized gift, or want to
+          place a custom order, we’d love to hear from you.
+        </p>
+      </div>
+
+      <!-- Contact Details Grid (4 Cards) -->
+      <div class="contact-grid">
+
+        <!-- Card 1: Main Location / Studio -->
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <h3 class="card-heading">Our Studio & Store</h3>
+          <p class="card-detail">LUMIÈRE Candles Studio</p>
+          <p class="card-subtext">102 Rosewood Avenue, Block 4, Gulberg III, Lahore, Pakistan</p>
+        </div>
+
+        <!-- Card 2: Phone & WhatsApp Support -->
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+              </path>
+            </svg>
+          </div>
+          <h3 class="card-heading">Direct Call & WhatsApp</h3>
+          <p class="card-detail">+92 (300) 123-4567</p>
+          <p class="card-subtext">Mon – Sat | 10:00 AM – 8:00 PM</p>
+        </div>
+
+        <!-- Card 3: Customer Care Email -->
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </div>
+          <h3 class="card-heading">Email Us</h3>
+          <p class="card-detail">hello@lumierecandles.com</p>
+          <p class="card-subtext">We respond within 24 business hours</p>
+        </div>
+
+        <!-- Card 4: Social Media Connect -->
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </div>
+          <h3 class="card-heading">Follow Our Journey</h3>
+          <p class="card-detail">@lumiere.candles</p>
+          <p class="card-subtext">Instagram • Facebook • Pinterest</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- H. SITE FOOTER SECTION -->
+  <footer class="site-footer">
+    <div class="footer-container">
+
+      <!-- Top Footer Columns Grid -->
+      <div class="footer-grid">
+
+        <!-- Col 1: Brand Info & Tagline -->
+        <div class="footer-col brand-col">
+          <a href="#" class="footer-logo">LUMIÈRE <span class="logo-sub">Candles</span></a>
+          <p class="footer-tagline">
+            A little warmth for your everyday moments. Handcrafted in small batches with love, natural eco-soy wax, and
+            timeless fragrances.
+          </p>
+          <!-- Social Media Icons -->
+          <div class="footer-socials">
+            <a href="#" aria-label="Instagram" class="social-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" aria-label="Facebook" class="social-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" aria-label="Pinterest" class="social-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <line x1="12" y1="2" x2="12" y2="22"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#bestsellers">Shop Collections</a></li>
+            <li><a href="#collections">Bestsellers</a></li>
+            <li><a href="#story">Our Story</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Customer Support -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Customer Support</h4>
+          <ul class="footer-links">
+            <li><a href="info.html?page=faq">Help & FAQs</a></li>
+            <li><a href="info.html?page=track">Track Your Order</a></li>
+            <li><a href="info.html?page=shipping">Shipping Information</a></li>
+            <li><a href="info.html?page=custom">Custom Orders</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Policies & Legal -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Policies</h4>
+          <ul class="footer-links">
+            <li><a href="info.html?page=returns">Shipping & Return Policy</a></li>
+            <li><a href="info.html?page=privacy">Privacy Policy</a></li>
+            <li><a href="info.html?page=terms">Terms and Conditions</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Copyright Bar -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 LUMIÈRE Candles. All rights reserved.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Search Modal Overlay -->
+  <div class="search-modal-overlay" id="searchModal">
+    <div class="search-modal-content">
+      <div class="search-header-bar">
+        <h3>Search LUMIÈRE Candles</h3>
+        <button class="search-close-btn" id="searchCloseBtn">&times;</button>
+      </div>
+      <div class="search-input-wrapper">
+        <input type="text" id="searchInputField" placeholder="Type candle name or scent (e.g., Vanilla, Rose)..."
+          autofocus>
+      </div>
+      <div class="search-results-grid" id="searchResultsGrid">
+        <p class="search-placeholder-text">Start typing to explore our handcrafted candles...</p>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="search-icon.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
+
+</html>
