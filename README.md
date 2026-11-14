@@ -32,3 +32,12 @@ LUMIÈRE brings together elegant candle shopping and practical e-commerce functi
 - Create a responsive and visually appealing website.
 
 ## Project Screenshots
+
+![Candle-Website](candle-website-image-1)
+![Candle-Website](candle-website-image-2)
+![Candle-Website](candle-website-image-3)
+![Candle-Website](candle-website-image-4)
+![Candle-Website](candle-website-image-1)
+![Candle-Website](candle-website-image-1)
+![Candle-Website](candle-website-image-1)
+
